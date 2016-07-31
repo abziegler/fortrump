@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h2><a href="{% url 'senator_list' %}">U.S. Senators</a></h2>
+        <p>For Trump: </p>
+        <p>Not for Trump: </p>
+        <p>Hiding in a corner: </p>
+
+        <h2><a href="">U.S. Representatives</a></h2>
+        <p>For Trump: </p>
+        <p>Not for Trump: </p>
+        <p>Hiding in a corner: </p>
+
+        <h2><a href="">Governors</a></h2>
+        <p>For Trump: </p>
+        <p>Not For Trump: </p>
+        <p>Hiding in a corner: </p>
+    </section>
+{% endblock %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+
+    Republicans For Trump?
+        {% block title %}
+        {% endblock %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body><!-- container -->
+    <header>
+        <h1>Republicans for Trump?</h1>
+    </header>
+    <main>
+        {% block content %}
+        This is default content dude
+        {% endblock %}
+
+        {% if messages %}
+            <div>
+                <div>
+                    <ul>
+                        {% for message in messages %}
+                            {% if message.tags %}
+                                <li class="{{ message.tags }}">
+                            {% else %}
+                                <li>
+                            {% endif %}
+                            {{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; 2016 Adam Ziegler</p>
+    </footer>
+
+</body>
+
+</html>

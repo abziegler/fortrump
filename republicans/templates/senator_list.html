@@ -7,7 +7,7 @@
     <h2>U.S. Senators</h2>
     <ul>
         {% for senator in senators %}
-            <li><a href="">{{ senator }}</a></li>
+            <li><a href="{% url 'senator_detail' slug=senator.slug %}">{{ senator }}</a></li>
         {% endfor %}
     </ul>
 

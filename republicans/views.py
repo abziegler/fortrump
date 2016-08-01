@@ -28,16 +28,13 @@ class SenatorList(View):
             context
         )
 
-class SenatorDetail(View):
-    template_name = 'senator_detail.html'
-
-    def get(self, request):
-        senator = get_object_or_404(Republican, slug__iexact=slug)
-        return render(
-            request,
-            'senator_detail.html',
-            {'senator': senator}
-        )
+def senator_detail(request, slug):
+    senator = get_object_or_404(Republican, slug__iexact=slug)
+    return render(
+        request,
+        'senator_detail.html',
+        {'senator': senator}
+    )
 
 
 class RepresentativeList(View):

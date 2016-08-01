@@ -7,6 +7,7 @@ class Republican(models.Model):
     first_name = models.CharField(max_length=31)
     state = models.CharField(max_length=2)
     twitter_id = models.CharField(max_length=31)
+    slug = models.SlugField(max_length=31, unique=True)
 
     SENATOR = 'S'
     REPRESENTATIVE = 'R'

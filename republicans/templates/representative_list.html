@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <h2>U.S. Representatives</h2>
+    <ul>
+        {% for representative in representatives %}
+            <li><a href="">{{ representative }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

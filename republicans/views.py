@@ -28,4 +28,29 @@ class SenatorList(View):
             context
         )
 
+class SenatorDetail(View):
+    template_name = 'senator_detail.html'
+
+    def get(self, request):
+        senator = get_object_or_404(Republican, slug__iexact=slug)
+        return render(
+            request,
+            'senator_detail.html',
+            {'senator': senator}
+        )
+
+
+class RepresentativeList(View):
+    template_name = 'representative_list.html'
+
+    def get(self, request):
+        representatives = Republican.objects.filter(gov_type='R')
+        context = {
+            'representatives': representatives
+        }
+        return render(
+            request,
+            self.template_name,
+            context
+        )
 

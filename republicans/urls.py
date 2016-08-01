@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
 from republicans.views import (
-    SenatorList, RepresentativeList, senator_detail
+    SenatorList, RepresentativeList, senator_detail, representative_detail
 )
 
 urlpatterns = [
@@ -14,4 +14,7 @@ urlpatterns = [
     url(r'^representatives/$',
         RepresentativeList.as_view(),
         name='representative_list'),
+    url(r'^representatives/(?P<slug>[\w\-]+)/$',
+        representative_detail,
+        name='representative_detail'),
 ]

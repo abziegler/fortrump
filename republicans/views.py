@@ -51,3 +51,10 @@ class RepresentativeList(View):
             context
         )
 
+def representative_detail(request, slug):
+    representative = get_object_or_404(Republican, slug__iexact=slug)
+    return render(
+        request,
+        'representative_detail.html',
+        {'representative': representative}
+    )

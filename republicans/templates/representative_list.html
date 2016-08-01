@@ -7,7 +7,7 @@
     <h2>U.S. Representatives</h2>
     <ul>
         {% for representative in representatives %}
-            <li><a href="">{{ representative }}</a></li>
+            <li><a href="{% url 'representative_detail' slug=representative.slug %}">{{ representative }}</a></li>
         {% endfor %}
     </ul>
 
